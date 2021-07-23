@@ -33,7 +33,7 @@ Edit this document to include your answers after each question. Make sure to lea
 
 2. Explain the difference between a callback and a higher order function.
 
-~ no difference it's synonym.
+~ callback is the function that is passed into a higher order function.
 
 3. Explain what a closure is.
 
