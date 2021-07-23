@@ -75,7 +75,7 @@ function animalNames(array)
     return animalNames;
 }
 
-console.log(animalNames(zooAnimals));
+console.log('Request 1:', animalNames(zooAnimals));
 
 
 /* 🦁🦁🦁 Request 2: .map() 🦁🦁🦁
@@ -94,7 +94,7 @@ function lowerCaseNames(array)
     return mappedZooAnimals;
 }
 
-console.log(lowerCaseNames(zooAnimals));
+console.log('Request 2:', lowerCaseNames(zooAnimals));
 
 
 /* 🦁🦁🦁 Request 3: .filter() 🦁🦁🦁
@@ -107,7 +107,7 @@ function lowPopulationAnimals(array)
     return array.filter(animal => animal.population < 5);
 }
 
-console.log(lowPopulationAnimals(zooAnimals));
+console.log('Request 3:', lowPopulationAnimals(zooAnimals));
 
 
 /* 🦁🦁🦁 Request 4: .reduce() 🦁🦁🦁
@@ -124,7 +124,7 @@ function USApop(array)
         return sum;
     }, 0);
 }
-console.log(USApop(zooAnimals));
+console.log('Request 4:', USApop(zooAnimals));
 
 
 // 🦁🦁🦁 Callbacks 🦁🦁🦁  
@@ -135,36 +135,49 @@ console.log(USApop(zooAnimals));
   * The consume function should return the invocation of cb, passing a and b into cb as arguments
 */
 
-function consume(/*Your Code Here */)
+function consume(a, b, cb)
 {
-    /*Your Code Here */
+    const result = cb(a, b);
+    return result;
 }
+
+function divide(a, b)
+{
+    const result = a / b;
+    return result;
+}
+
+console.log('CB step 1 (divide):', consume(20, 4, divide));
 
 
 /* 🦁🦁🦁 Step 2: Create several functions to callback with consume(); 🦁🦁🦁 */
 // 🦁🦁🦁 Use add to return the sum of two numbers 🦁🦁🦁
 
-function add(/*Your Code Here */)
+function add(a, b)
 {
-    /*Your Code Here*/
+    return a + b;
 }
 
+console.log('CB step 2 (add):', consume(5, 12, add));
 
 // 🦁🦁🦁 Use multiply to return the product of two numbers 🦁🦁🦁
 
-function multiply(/*Your Code Here */)
+function multiply(a, b)
 {
-    /*Your Code Here */
+    return a * b;
 }
+
+console.log('CB step 3 (multiply):', consume(5, 12, multiply));
 
 
 // 🦁🦁🦁 Use greeting to accept a first and last name and return "Hello {first-name} {last-name}, nice to meet you!" 🦁🦁🦁
 
-function greeting(/*Your Code Here */)
+function greeting(firstName, lastName)
 {
-    return; /*Your Code Here */
+    return `Hello ${firstName} ${lastName}, nice to meet you!`;
 }
 
+console.log('Greeting:', greeting("Vasilii", "Garanin"));
 
 // 🦁🦁🦁 Step 3: Check your work by un-commenting the following calls to consume(): 🦁🦁🦁 
 // ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️
