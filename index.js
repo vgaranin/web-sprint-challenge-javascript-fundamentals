@@ -171,7 +171,6 @@ function multiply(num1, num2)
 console.log('CB step 3 (multiply):', consume(4, 16, multiply));
 
 
-
 // 🦁🦁🦁 Use greeting to accept a first and last name and return "Hello {first-name} {last-name}, nice to meet you!" 🦁🦁🦁
 
 function greeting(firstName, lastName)
@@ -268,7 +267,29 @@ console.log(cuboidTwo.surfaceArea()); // 130
 
 // 🦄 💪 Stretch Task: Extend the base class CuboidMaker with a sub class called CubeMaker.  Find out the formulas for volume and surface area for cubes and create those methods using the dimension properties from CuboidMaker.  Test your work by logging out your volume and surface area. 🦄 💪
 
+class CubeMaker extends CuboidMaker
+{
+    constructor(edge)
+    {
+        super(edge, edge, edge);
+    }
 
+    volume()
+    {
+        return Math.pow(this.length, 3);
+
+    }
+
+    surfaceArea()
+    {
+        return 6 * Math.pow(this.width, 2);
+    }
+}
+
+const cub = new CubeMaker(5);
+
+console.log(cub.volume());
+console.log(cub.surfaceArea());
 
 
 
