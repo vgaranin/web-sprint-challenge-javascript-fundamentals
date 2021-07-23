@@ -25,7 +25,12 @@ Demonstrate your understanding of this week's concepts by answering the followin
 Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read.
 
 1. Explain the differences between `.map`, `.reduce` and `.filter` and describe a use case for each. 
-
+ 
+ ~ `.map` creates array and returns value from callback function;
+ it's used to "map" a data, this function will check each element in array and will return array object being mapped.
+   `.reduce` reduce works to algorithmically simplify an array down to a single value.
+   `.filter` used to to iterate over all items in the array and return only what we want. 
+   
 2. Explain the difference between a callback and a higher order function.
 
 3. Explain what a closure is.
