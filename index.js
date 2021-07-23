@@ -69,7 +69,7 @@ function animalNames(array)
 
     array.forEach(animal => 
     {
-        animalNames.push({ name: animal.animal_name, scientific: animal.scientific_name });
+        animalNames.push(`name: ${animal.animal_name}, scientific: ${animal.scientific_name}`);
     });
 
     return animalNames;
@@ -141,11 +141,12 @@ function consume(a, b, cb)
     return result;
 }
 
-function divide(a, b)
+function divide(num1, num2)
 {
-    const result = a / b;
+    const result = num1 / num2;
     return result;
 }
+
 
 console.log('CB step 1 (divide):', consume(20, 4, divide));
 
@@ -153,21 +154,22 @@ console.log('CB step 1 (divide):', consume(20, 4, divide));
 /* 🦁🦁🦁 Step 2: Create several functions to callback with consume(); 🦁🦁🦁 */
 // 🦁🦁🦁 Use add to return the sum of two numbers 🦁🦁🦁
 
-function add(a, b)
+function add(num1, num2)
 {
-    return a + b;
+    return num1 + num2;
 }
 
-console.log('CB step 2 (add):', consume(5, 12, add));
+console.log('CB step 2 (add):', consume(2, 5, add));
 
 // 🦁🦁🦁 Use multiply to return the product of two numbers 🦁🦁🦁
 
-function multiply(a, b)
+function multiply(num1, num2)
 {
-    return a * b;
+    return num1 * num2;
 }
 
 console.log('CB step 3 (multiply):', consume(4, 16, multiply));
+
 
 
 // 🦁🦁🦁 Use greeting to accept a first and last name and return "Hello {first-name} {last-name}, nice to meet you!" 🦁🦁🦁
@@ -177,7 +179,7 @@ function greeting(firstName, lastName)
     return `Hello ${firstName} ${lastName}, nice to meet you!`;
 }
 
-console.log('Greeting:', greeting("Vasilii", "Garanin"));
+console.log('CB step 3 (Greeting):', consume("Vasilii", "Garanin", greeting));
 
 // 🦁🦁🦁 Step 3: Check your work by un-commenting the following calls to consume(): 🦁🦁🦁 
 // ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️
