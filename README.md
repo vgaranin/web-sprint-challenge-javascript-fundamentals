@@ -30,14 +30,24 @@ Edit this document to include your answers after each question. Make sure to lea
  it's used to "map" a data, this function will check each element in array and will return array object being mapped.
    `.reduce` reduce works to algorithmically simplify an array down to a single value.
    `.filter` used to to iterate over all items in the array and return only what we want. 
-   
+
 2. Explain the difference between a callback and a higher order function.
+
+~ no difference it's synonym.
 
 3. Explain what a closure is.
 
+~ Closure means that an inner function always has access to the variables and parameters of its outer function.
+
+
 4. Describe the four principles of the 'this' keyword.
+ ~ 1) Window/Global Object Binding; 
+   2) Implicit Binding;
+   3) New binding;
+   4) Explicit binding
 
 5. Why do we need super() in an extended class?
+~ "super()" is used to access and call functions on an object's parent.
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade. 
 
