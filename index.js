@@ -19,7 +19,7 @@ myFunction();
 
 //🚀🚀🚀 ⬇️ 📝 Explanation ⬇️ 📝 🚀🚀🚀: 
 
-// Because its nested inside myFunction
+// By the rule the inner function (nestedFunction) can see variables from outer function (myFunction).
 
 
 
@@ -63,10 +63,17 @@ Use animalNames to populate and return the displayNames array with only the anim
 displayNames will be an array of strings, and each string should follow this pattern: "name: {name}, scientific: {scientific name}"
 */
 
-function animalNames(/*Your Code Here*/)
+function animalNames(array)
 {
-    /*Your Code Here*/
+    const mappedZooAnimals = array.map((animal) => 
+    {
+        return { name: animal.animal_name, scientific: animal.scientific_name };
+    });
+
+    return mappedZooAnimals;
 }
+
+console.log(animalNames(zooAnimals));
 
 
 /* 🦁🦁🦁 Request 2: .map() 🦁🦁🦁
